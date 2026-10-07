@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design tokens taken from the Figma file "Mern Space Admin (Public)"
+ * Color styles: primary, Orange, success, menu-text, white, Light BG
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: #f8f7f6; /* Light BG */
+  --foreground: #1f1f1f;
+
+  --card: #ffffff;
+  --card-foreground: #1f1f1f;
+  --popover: #ffffff;
+  --popover-foreground: #1f1f1f;
+
+  --primary: #ff6b1a; /* Orange (buttons, size chips, add button) */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f1ef;
+  --secondary-foreground: #2d2d2d;
+
+  --muted: #f1efed;
+  --muted-foreground: #7a7a7a; /* menu-text */
+
+  --accent: #fff1e8;
+  --accent-foreground: #e85a0c;
+
+  --destructive: #f5222d;
+  --success: #219653; /* success */
+  --success-foreground: #ffffff;
+
+  --border: #e9e6e3;
+  --input: #e4e1de;
+  --ring: #ff6b1a;
+
+  --brand-coral: #f65f42; /* primary (admin buttons) */
+  --footer: #3b1f0e; /* dark brown footer */
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-coral: var(--brand-coral);
+  --color-footer: var(--footer);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@theme {
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+}

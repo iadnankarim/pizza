@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+dist/
+out/
+*.tsbuildinfo
+
+# env / secrets
+.env
+.env.*
+
+# archives
+*.zip
+
+# markdown files
+*.md
+
+# misc
+.DS_Store
+npm-debug.log*
+.vercel
